@@ -154,7 +154,7 @@
                 <section className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="Portada.jpeg"
+                            src="portada.jpeg"
                             alt="Fondo Restaurante Acuarela"
                             className="w-full h-full object-cover transform scale-105"
                             onError={(e) => {
@@ -385,18 +385,26 @@
                                             <div className="mt-1 w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform"><Icons.Clock /></div>
                                             <div className="flex-1">
                                                 <h4 className="text-2xl font-serif text-brand-900 mb-6">Horarios</h4>
-                                                <ul className="space-y-4">
-                                                    <li className="flex justify-between items-center bg-brand-50/50 p-4 rounded-xl">
-                                                        <span className="text-brand-700 font-medium">Lunes a Jueves</span>
-                                                        <span className="text-brand-900 font-bold bg-white px-4 py-1 rounded-full shadow-sm">8:00 - 23:30</span>
+                                                <ul className="space-y-3 sm:space-y-4 text-sm md:text-base">
+                                                    <li className="flex justify-between items-center bg-brand-50/50 p-3 md:p-4 rounded-xl">
+                                                        <span className="text-brand-700 font-medium">Lunes</span>
+                                                        <span className="text-red-600 font-bold bg-white px-3 md:px-4 py-1 rounded-full shadow-sm">Cerrado</span>
                                                     </li>
-                                                    <li className="flex justify-between items-center bg-brand-50/50 p-4 rounded-xl border border-brand-accent/20">
-                                                        <span className="text-brand-700 font-medium text-brand-accent">Viernes y Sábado</span>
-                                                        <span className="text-brand-900 font-bold bg-white px-4 py-1 rounded-full shadow-sm border border-brand-accent/30">8:00 - 1:00</span>
+                                                    <li className="flex justify-between items-center bg-brand-50/50 p-3 md:p-4 rounded-xl">
+                                                        <span className="text-brand-700 font-medium">Martes a Viernes</span>
+                                                        <span className="text-brand-900 font-bold bg-white px-3 md:px-4 py-1 rounded-full shadow-sm">8:00 - 24:00</span>
                                                     </li>
-                                                    <li className="flex justify-between items-center bg-brand-50/50 p-4 rounded-xl">
+                                                    <li className="flex justify-between items-center bg-brand-50/50 p-3 md:p-4 rounded-xl border border-brand-accent/20">
+                                                        <span className="text-brand-700 font-medium text-brand-accent">Sábado</span>
+                                                        <span className="text-brand-900 font-bold bg-white px-3 md:px-4 py-1 rounded-full shadow-sm border border-brand-accent/30">11:00 - 24:00</span>
+                                                    </li>
+                                                    <li className="flex justify-between items-center bg-brand-50/50 p-3 md:p-4 rounded-xl">
                                                         <span className="text-brand-700 font-medium">Domingo</span>
-                                                        <span className="text-brand-900 font-bold bg-white px-4 py-1 rounded-full shadow-sm">8:00 - 23:30</span>
+                                                        <span className="text-brand-900 font-bold bg-white px-3 md:px-4 py-1 rounded-full shadow-sm">11:00 - 17:00</span>
+                                                    </li>
+                                                    <li className="flex justify-between items-center bg-brand-accent/10 p-3 md:p-4 rounded-xl border border-brand-accent/30">
+                                                        <span className="text-brand-700 font-medium text-brand-accent">Festivos</span>
+                                                        <span className="text-brand-900 font-bold bg-white px-3 md:px-4 py-1 rounded-full shadow-sm border border-brand-accent/30">11:00 - 24:00</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -431,30 +439,41 @@
 
         const Footer = () => {
             return (
-                <footer className="bg-brand-900 text-brand-100 pt-24 pb-12 px-6 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-brand-800 rounded-full mix-blend-screen opacity-50 filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+                <footer className="relative text-white pt-24 pb-12 px-6 overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src="fondo-footer.jpg"
+                            alt="Fondo Restaurante Acuarela Footer"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+                            }}
+                        />
+                        <div className="absolute inset-0 bg-brand-900/60 backdrop-blur-[2px]"></div>
+                    </div>
 
                     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
                         <div className="text-center md:text-left">
                             <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">Restaurante <span className="text-brand-accent font-light italic">Acuarela</span></h2>
-                            <p className="text-brand-300 text-lg max-w-sm">Arte en cada bocado, en el corazón de Moratalaz.</p>
+                            <p className="text-brand-100 text-lg max-w-sm">Arte en cada bocado, en el corazón de Moratalaz.</p>
                         </div>
 
                         <div className="flex flex-col items-center md:items-end gap-6">
-                            <a href="https://www.instagram.com/restauranteacuarelamadrid/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 transition-all border border-brand-800 hover:border-brand-700 hover:-translate-y-1">
+                            <a href="https://www.instagram.com/restauranteacuarelamadrid/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 transition-all border border-white/20 hover:border-white/40 hover:-translate-y-1">
                                 <div className="text-brand-accent group-hover:text-white transition-colors"><Icons.Instagram /></div>
                                 <span className="font-medium tracking-wide">Síguenos en Instagram</span>
                             </a>
-                            <a href="#reservar" className="text-brand-400 hover:text-brand-accent transition-colors font-semibold uppercase tracking-widest text-sm">Reserva tu mesa</a>
+                            <a href="#reservar" className="text-brand-300 hover:text-brand-accent transition-colors font-semibold uppercase tracking-widest text-sm">Reserva tu mesa</a>
                         </div>
                     </div>
 
-                    <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-brand-800/50 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-brand-500 text-sm relative z-10">
+                    <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-brand-200 text-sm relative z-10">
                         <p>&copy; {new Date().getFullYear()} Restaurante Acuarela. Todos los derechos reservados.</p>
                         <div className="flex gap-6 justify-center">
-                            <a href="#" className="hover:text-brand-300 transition-colors">Aviso Legal</a>
-                            <a href="#" className="hover:text-brand-300 transition-colors">Política de Privacidad</a>
-                            <a href="#" className="hover:text-brand-300 transition-colors">Cookies</a>
+                            <a href="#" className="hover:text-white transition-colors">Aviso Legal</a>
+                            <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
+                            <a href="#" className="hover:text-white transition-colors">Cookies</a>
                         </div>
                     </div>
                 </footer>
